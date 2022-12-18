@@ -44,6 +44,7 @@
 
     &::before {
       content: 'Joined';
+      padding-right: 0.3125rem;
     }
 
     @media (min-width: 767px) {
