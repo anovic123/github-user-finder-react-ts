@@ -1,7 +1,7 @@
 {
   "name": "github-user-finder-react-ts",
   "version": "0.1.0",
-  "homepage": "https://anovic123.github.io/weather-api-react-ts",
+  "homepage": "https://anovic123.github.io/github-user-finder-react-ts",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
