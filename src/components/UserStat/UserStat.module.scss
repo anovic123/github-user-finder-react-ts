@@ -16,7 +16,12 @@
   padding: 15px 32px;
   border-radius: 10px;
   display: grid;
+  gap: 5px;
   grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .info {

@@ -10,6 +10,7 @@ export interface InfoItemProps {
 
 export const InfoItem = ({ icon, isLink, text }: InfoItemProps) => {
   const currentText = text || 'Not Available';
+
   let currentHref = '';
 
   if (isLink) {
@@ -21,11 +22,13 @@ export const InfoItem = ({ icon, isLink, text }: InfoItemProps) => {
       {icon}
       <div>
         {isLink && text ? (
-          <a href={currentHref} target="_blank" rel="noreferrer" className={styles.link}>{currentText}</a>
+          <a href={currentHref} target="_blank" rel="noreferrer" className={styles.link}>
+            {currentText}
+          </a>
         ) : (
           currentText
         )}
       </div>
     </div>
-  )
-}
+  );
+};
