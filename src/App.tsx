@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Header, Search } from './components';
+import { Container, Header, Search, UserCard } from './components';
 
 export const App = () => {
 
@@ -8,6 +8,7 @@ export const App = () => {
     <Container>
       <Header />
       <Search />
+      <UserCard />
     </Container>
   )
 }
