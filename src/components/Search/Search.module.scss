@@ -18,18 +18,18 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: .625rem .625rem .625rem 1rem;
+  padding: 0.625rem 0.625rem 0.625rem 1rem;
   background-color: var(--search-bg, white);
   display: flex;
   align-items: center;
   box-shadow: var(--search-shadow);
-  border-radius: .9375rem;
+  border-radius: 0.9375rem;
 
   @media (min-width: 767px) {
-    padding: .625rem .625rem .625rem .625rem 1.875rem;
+    padding: 0.625rem 0.625rem 0.625rem 0.625rem 1.875rem;
   }
 
-  &>button {
+  & > button {
     flex-shrink: 0;
   }
 }
@@ -39,7 +39,7 @@
 }
 
 .textField {
-  padding: 0 .625rem;
+  padding: 0 0.625rem;
   flex-grow: 5;
   height: 60px;
   max-width: calc(100% - 6.25rem - 1.25rem);
@@ -51,7 +51,7 @@
   background-color: var(--search-bg);
 
   &::placeholder {
-    color: var(--search-placeholder-color)
+    color: var(--search-placeholder-color);
   }
 
   &:focus {
@@ -59,8 +59,25 @@
   }
 
   @media (min-width: 767px) {
-    margin: 0 .3125rem;
+    margin: 0 0.3125rem;
     font-size: 1.25rem;
     margin: 0 1.25rem;
+  }
+}
+
+.error {
+  position: absolute;
+  right: 50%;
+  bottom: 5px;
+  color: var(--error-color);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+
+  @media (min-width: 767px) {
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: unset;
   }
 }

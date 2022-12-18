@@ -5,12 +5,28 @@ import { Button } from '../Button/Button';
 
 import styles from './Search.module.scss';
 
-interface SearchProps {}
+interface SearchProps {
+  hasError: boolean;
+  onSubmit: (text: string) => void;
+}
 
-export const Search: React.FC<SearchProps> = () => {
+type FormFields = {
+  username: HTMLInputElement;
+}
+
+export const Search: React.FC<SearchProps> = ({ hasError, onSubmit }: SearchProps) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement & FormFields>) => {
+    event.preventDefault();
+    const text = event.currentTarget.username.value;
+
+    if (text.trim()) {
+      onSubmit(text);
+      event.currentTarget.reset();
+    }
+  }
 
   return (
-    <form autoComplete='false'>
+    <form onSubmit={handleSubmit} autoComplete='false'>
       <div className={styles.search}>
         <label className={styles.label}>
           <SearchIcon />
@@ -18,8 +34,11 @@ export const Search: React.FC<SearchProps> = () => {
         <input
           type="text"
           className={styles.textField}
+          id="search"
+          name="username"
           placeholder="Найдите имя пользователя GitHub..."
         />
+        {hasError && <div className={styles.error}>No result</div>}
         <Button>Search</Button>
       </div>
     </form>
